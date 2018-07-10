@@ -1,0 +1,19 @@
+{
+  "name": "wapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/douglaasd/WAPI.git"
+  },
+  "author": "Douglas Zaia Adam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/douglaasd/WAPI/issues"
+  },
+  "homepage": "https://github.com/douglaasd/WAPI#readme"
+}
