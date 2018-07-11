@@ -1,7 +1,7 @@
 {
   "name": "wapi",
   "version": "1.0.0",
-  "description": "",
+  "description": "Application to use a API from Waframe",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/douglaasd/WAPI/issues"
   },
-  "homepage": "https://github.com/douglaasd/WAPI#readme"
+  "homepage": "https://github.com/douglaasd/WAPI#readme",
+  "dependencies": {
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
+    "warframe-worldstate-parser": "^2.0.1"
+  }
 }

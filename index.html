@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>GURPS</title>
+  <link rel="shortcut icon" href="resources/images/dice.png" />
+  <!-- Meta dados da pagina -->
+  <meta name="keywords" content="GURPS, RPG, planilha, sheet, gurps character sheet">
+  <meta name="author" content="Douglas Zaia Adam">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Links contendo os arquivos css    class="form-group row"-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <!-- Scripts contendo as funcoes para funcionamento da pagina -->
+  <script type="text/javascript" src="jquery-3.2.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Barra de operacoes na parte superior da pagina -->
+  <header>
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <span class="navbar-brand"><img src="" width="30" /> WAPI <b style="color: gray">Alpha</b></span>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <!--<li class="nav-item active">
+            <a class="nav-link" href="#">Character Sheet</a>
+          </li>-->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Plataform
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu bg-inverse">
+              <li><a href="index.html" class="nav-link">PC</a></li>
+              <li><a href="" class="nav-link">PS4 - Coming Soon</a></li>
+              <li><a href="" class="nav-link">XBOX ONE - Coming Soon</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="modal" data-target="#bugModal">Suggestions / Bug report</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <br /><br /><br /><br />
+
+  <div class="container">
+    <h2>PC</h2>
+  </div>
+  <br />
+
+  <!-- Sessao das habilidades -->
+  <div class="container">
+      <div class="text-center table-responsive">
+        <h3>Alerts</h3>
+        </br>
+        <table id="alertsTable" class="table table-bordered" style="font-size: 11pt">
+          <thead>
+            <tr>
+              <th class="text-center" style="width: 40% ">Info</th>
+              <th class="text-center" style="width: 40%">Rewards</th>
+              <th class="text-center" style="width: 20%">Time</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    <!-- </div> -->
+  </div>
+  <br />
+
+  <!-- Modal de sugestoes e de reportar um bug -->
+  <div id="bugModal" class="modal fade">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Suggestions and Bug Report</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="col-form-label">Title</p>
+          <input type="text" id="emailTitle" maxlength="30" class="form-control" placeholder="Email title"/>
+          <p class="col-form-label">Message</p>
+          <textarea id="emailBody" maxlength="500" rows="4" class="form-control" placeholder="Email body"></textarea>
+
+          <!-- Mensagem de problema para enviar -->
+          <div id="emailAlert">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" onclick="sendEmail()">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mensagem de email enviado -->
+  <div class="container">
+    <div id="emailSent" class="alert alert-success alert-dismissible fade show fixed-top" role="alert" style="display: none">
+      <button type="button" class="close" aria-label="Close" onclick="$('#emailSent').fadeOut()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <strong>Your email was sent!</strong> We will review it when possible.
+    </div>
+  </div>
+
+  <div class="container">
+      <div id="emailError" class="alert alert-danger alert-dismissible fade show fixed-top" role="alert" style="display: none">
+        <button type="button" class="close" aria-label="Close" onclick="$('#emailError').fadeOut()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>Fail to send your email!</strong> Please try later.
+      </div>
+    </div>
+
+  <!-- Footer da pagina -->
+  <!-- <footer class="footer text-muted bg-inverse text-center" style="padding: 3rem 0; width: 100%; position: absolute">
+    <div class="footer-block">
+      <span>WAPI</span>
+    </div>
+  </footer> -->
+</body>
+<script type="text/javascript">
+    $.ajax({url: "api/pcAlerts.json", success: function(alerts) {
+        var table = document.getElementById('alertsTable').getElementsByTagName('tbody')[0];
+        alerts.forEach(function(alert) {
+            var row = table.insertRow();
+            row.insertCell().innerHTML = '<b>'+alert.location+'</b> '+alert.level+'<br>'+alert.type+' ('+alert.faction+')';
+            if(alert.rewards.length > 0) row.insertCell().innerHTML = '<b style="color: #f6546a">'+alert.rewards.join('<br>')+'<br></b> <b style="color: #325b84">'+alert.credits+'</b>';
+            else row.insertCell().innerHTML = '<b style="color: #325b84">'+alert.credits+'</b>';
+            row.insertCell().innerHTML = '<b style="color: #00b200">'+alert.time+'</b>';
+        });
+    }});
+
+</script>
+</html>
+
